@@ -15,7 +15,7 @@ seen in a cardiac short axis late gadolinium enhanced MRI image. The metrics pro
 The physical units of the area, and interface length scores are determined by the pixel sizes specified in the image.
 
 # How to use it
-You will need pairs of short axis medical images in .nifti format.
+You will need pairs of short axis medical images in nifti format.
 
 
 ![Example images](/example_data/example_images.png)
