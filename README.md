@@ -12,11 +12,18 @@ seen in a cardiac short axis late gadolinium enhanced MRI image. The metrics pro
               wheras 0 indicates no angular extend of scar.
 * interface length - The total length of the border between the scar and healthy myocardium.
 
+The physical units of the area, and interface length scores are determined by the pixel sizes specified in the image.
+
 # How to use it
-You will need pairs of short axis medical images in .nifti format. One image in each pair should contain
+You will need pairs of short axis medical images in .nifti format.
+
+
+![Example images](/example_data/example_images.png)
+
+One image in each pair should contain
 the raw pixel values, while the other should contain a segmentation of the myocardium and the 
-scar with seperate markers. The myocardium should be a complete ring with a blood pool in the middle. All non
-myocarial and scar areas should be marked 0.
+scar with seperate markers. The myocardium should be a complete ring with a blood pool in the middle. All non-myocardial and scar areas should be marked 0.
+
 
 
 # Known compatible dependencies

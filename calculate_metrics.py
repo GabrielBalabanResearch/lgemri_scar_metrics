@@ -58,6 +58,10 @@ def main(args):
 	raw_image = nib.load(args.raw_image)
 	seg_image = nib.load(args.segmentation)
 	
+	plt.imshow(seg_image.get_data()[:,:,0])
+	plt.show()
+	exit()
+
 	#Image markers in segmentation
 	markers = lambda:None
 	markers.scar = args.mark_scar
