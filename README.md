@@ -30,6 +30,8 @@ The script can then be run with the command
 
 im1 and im2 are the raw pixel data in nifti format, metrics.csv is the output file, and mark1 and mark2 are the markers of the myocarium and the scar in the segmentation image. 
 
+Running the script without any parameters will analyze the data in the the "example_data" folder.
+
 # Known compatible dependencies
 
 * python 2.7.12
