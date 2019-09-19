@@ -24,6 +24,17 @@ One image in each pair should contain
 the raw pixel values, while the other should contain a segmentation of the myocardium and the 
 scar with seperate markers. The myocardium should be a complete ring with a blood pool in the middle. All non-myocardial and scar areas should be marked 0.
 
+The script can then be run with the command
 
+`python calculate metrics.py -raw image im1.nii -segmentation im2.nii -output metrics.csv -mark_myocardium mark1 -mark_scar mark2`
+
+im1 and im2 are the raw pixel data in nifti format, metrics.csv is the output file, and mark1 and mark2 are the markers of the myocarium and the scar in the segmentation image. 
 
 # Known compatible dependencies
+
+* python 2.7.12
+* scipy 1.1.0
+* numpy 1.15.2
+* nibabel 2.1.0
+* cv2 2.4.9.1
+* pandas 0.24.1

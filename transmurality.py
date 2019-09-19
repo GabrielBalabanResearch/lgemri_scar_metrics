@@ -1,6 +1,4 @@
 from scipy.ndimage.morphology import binary_fill_holes
-from matplotlib import pyplot as plt
-
 import numpy as np
 import collections
 
@@ -85,6 +83,8 @@ def trace_ray(image, X, Y, theta, mark_outsidemyo):
 	return np.array(pixels)
 	
 def plot_with_rays(image, graylevels, myo_im, scar_im, rays):
+	from matplotlib import pyplot as plt
+
 	"""output an MRI with the rays visualized in yellow"""
 
 	pngout = PNGOutput(graylevels, (0.2, 0.5))
@@ -107,6 +107,7 @@ def plot_with_rays(image, graylevels, myo_im, scar_im, rays):
 	#from IPython import embed; embed()
 
 def test_trace_ray():
+	from matplotlib import pyplot as plt
 	image = np.zeros((100,100))
 	
 	inner_box = np.zeros(image.shape, dtype = bool)
