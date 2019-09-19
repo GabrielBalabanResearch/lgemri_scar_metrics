@@ -4,45 +4,41 @@ from matplotlib import pyplot as plt
 import numpy as np
 import collections
 
-NUM_RAYS = 580
+NUM_RAYS = 360
 
-MARK_MYOCARDIUM = 1
-MARK_BLOOD = 2
-MARK_SCAR = 3
-
-def get_scar_transmurality(seg_nii):
-	MARK_OUTSIDEMYO = 2
+def get_scar_transmurality(seg_nii, markers):
+	mark_outsidemyo = max(markers.myo, markers.scar) + 1
 
 	segdata = seg_nii.get_data()[:,:,0]
-	myo_im = segdata >0
+	myo_im = np.logical_or(segdata == markers.scar, segdata == markers.myo)
 	outside_myo = np.logical_not(binary_fill_holes(myo_im))
 	
 	ray_im = np.array(myo_im, dtype =int)
-	ray_im[outside_myo] = MARK_OUTSIDEMYO
+	ray_im[outside_myo] = mark_outsidemyo
 	
 	centre_coords = np.mean(np.array(np.where(myo_im >0)),
  							axis = 1)
 
 	thetas = np.linspace(0, 2*np.pi, NUM_RAYS + 1)[:-1]
-	rays = [trace_ray(ray_im, centre_coords[0], centre_coords[1], theta) for theta in thetas]
+	rays = [trace_ray(ray_im, centre_coords[0], centre_coords[1], theta, mark_outsidemyo) for theta in thetas]
 	
-	scar_im = segdata > 1
+	scar_im = segdata == markers.scar
 
 	ray_counts = [collections.Counter(scar_im[ray[:,0], ray[:,1]]) for ray in rays]
 	trans_along_rays = [(r[True])/float((r[True] + r[False])) for r in ray_counts]
 
-	mean_trans = np.mean(trans_along_rays[	trans_along_rays > 0])
+	mean_trans = np.mean(trans_along_rays[trans_along_rays > 0])
 	return mean_trans
 	
-def trace_ray(image, X, Y, theta):
+def trace_ray(image, X, Y, theta, mark_outsidemyo):
 	"""
 	Traces a ray through a SAX image, returning the list of pixels which intersect the ray
 	Only the ray going through the myocardium is returned. 
 	In the image 0 = blood pool
 				 1 = myocardium
-				 2 = outside epicardium
+				 mark_outsidemyo = outside of the myocardium
 
-	ALgorithm is based on Amanatides and Woo (1987)
+	Algorithm is based on Amanatides and Woo (1987)
 	"""
 
 	px, py = (int(X), int(Y))
@@ -65,7 +61,7 @@ def trace_ray(image, X, Y, theta):
 	pixels = []
 	while True:
 		#Ray is outside epicardium so stop
-		if image[px, py] == 2:
+		if image[px, py] == mark_outsidemyo:
 			break
 
 		#We are not in the myocardium so record
