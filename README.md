@@ -22,7 +22,7 @@ You will need pairs of short axis medical images in nifti format.
 
 One image in each pair should contain
 the raw pixel values, while the other should contain a segmentation of the myocardium and the 
-scar with seperate markers. The myocardium should be a complete ring with a blood pool in the middle. All non-myocardial and scar areas should be marked 0.
+scar with seperate markers. The myocardium should be a complete ring with a blood pool in the middle. All non-myocardial and scar areas should be marked 0 (unlike in the image to the right).
 
 The script can then be run with the command
 
