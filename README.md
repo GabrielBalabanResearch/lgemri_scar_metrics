@@ -28,7 +28,7 @@ The script can then be run with the command
 
 `python calculate metrics.py -raw image im1.nii -segmentation im2.nii -output metrics.csv -mark_myocardium mark1 -mark_scar mark2`
 
-im1 and im2 are the raw pixel data in nifti format, metrics.csv is the output file, and mark1 and mark2 are the markers of the myocarium and the scar in the segmentation image. 
+where *im1* and *im2* are the raw pixel and segmentation data in nifti format, *metrics.csv* is the output file, and *mark1* and *mark2* are the markers of the myocarium and the scar in the segmentation image. 
 
 Running the script without any parameters will analyze the data in the the "example_data" folder.
 
