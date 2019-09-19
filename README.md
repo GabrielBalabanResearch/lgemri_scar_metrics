@@ -1,4 +1,4 @@
-#What this script does
+# What this script does
 This repository provides a script that creates a list of metrics quantifying a scar 
 seen in a cardiac short axis late gadolinium enhanced MRI image. The metrics provided are
 
@@ -6,11 +6,11 @@ seen in a cardiac short axis late gadolinium enhanced MRI image. The metrics pro
 * entropy
 * components
 * transmurality
-* scar_radiality
-* interface_length
+* radiality
+* interface length
 
 
-#How to use it
+# How to use it
 To analyze a medical image you can run the script calculate_metrics.py
 
-#Known compatible dependencies
+# Known compatible dependencies
