@@ -42,4 +42,4 @@ Running the script without any parameters will analyze the data in the "example_
 * pandas 0.24.1
 
 # Lisence 
-GNU 3 or later version http://www.gnu.org/licenses/gpl-3.0.html
+CC-BY 4.0 or later version (https://creativecommons.org/licenses/)
