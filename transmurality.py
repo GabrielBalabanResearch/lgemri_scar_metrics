@@ -23,7 +23,7 @@ def get_scar_transmurality(seg_nii, markers):
 	scar_im = segdata == markers.scar
 
 	ray_counts = [collections.Counter(scar_im[ray[:,0], ray[:,1]]) for ray in rays]
-	trans_along_rays = [(r[True])/float((r[True] + r[False])) for r in ray_counts]
+	trans_along_rays = np.array([(r[True])/float((r[True] + r[False])) for r in ray_counts])
 
 	mean_trans = np.mean(trans_along_rays[trans_along_rays > 0])
 	return mean_trans
@@ -119,8 +119,8 @@ def test_trace_ray():
 	image[np.logical_and(outer_box, np.logical_not(inner_box))] = 1
 	image[np.logical_not(outer_box)] = 2
 
-	ray = trace_ray(image, 50.0, 50.0, -np.pi/4)
-	print ray[-1]
+	ray = trace_ray(image, 50.0, 50.0, -np.pi/4, 2)
+	print(ray[-1])
 	image[ray[:, 0], ray[:,1]] = 3
 
 	plt.imshow(image)

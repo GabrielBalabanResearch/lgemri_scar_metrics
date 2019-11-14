@@ -85,7 +85,7 @@ def main(args):
 	features_df.to_csv(args.output,
 						index = False)
 
-	print "Exported scar metrics to ", args.output
+	print("Exported scar metrics to ", args.output)
 
 if __name__ == "__main__":
 	parser = argparse.ArgumentParser()

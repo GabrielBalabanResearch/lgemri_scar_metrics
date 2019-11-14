@@ -34,12 +34,17 @@ Running the script without any parameters will analyze the data in the "example_
 
 # Known compatible dependencies
 
-* python 2.7.12
-* scipy 1.1.0
-* numpy 1.15.2
-* nibabel 2.1.0
-* cv2 2.4.9.1
-* pandas 0.24.1
+* python 3.6.8
+* scipy 1.3.1
+* numpy 1.17.2
+* nibabel 2.5.1
+* cv2 4.1.1
+* pandas 0.25.1
+
+# Citation
+If you found this script useful and would like to cite it please cite
+
+Balaban G, Halliday BP, Bai W, Porter B, Malvuccio C, Lamata P, Rinaldi CA, Plank G, Rueckert D, Prasad SK, Bishop MJ. Scar shape analysis and simulated electrical instabilities in a non-ischemic dilated cardiomyopathy patient cohort. PLOS computational biology. 2019 Oct;15(10):e1007421-.
 
 # Lisence 
 CC-BY 4.0 or later version (https://creativecommons.org/licenses/)
