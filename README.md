@@ -42,9 +42,12 @@ Running the script without any parameters will analyze the data in the "example_
 * pandas 0.25.1
 
 # Citation
-If you found this script useful and would like to cite it please cite
+If you found this script useful and would like to cite it please cite one or both of these papers
 
-Balaban G, Halliday BP, Bai W, Porter B, Malvuccio C, Lamata P, Rinaldi CA, Plank G, Rueckert D, Prasad SK, Bishop MJ. Scar shape analysis and simulated electrical instabilities in a non-ischemic dilated cardiomyopathy patient cohort. PLOS computational biology. 2019 Oct;15(10):e1007421-.
+[Balaban G, Halliday BP, Bai W, Porter B, Malvuccio C, Lamata P, Rinaldi CA, Plank G, Rueckert D, Prasad SK, Bishop MJ. Scar shape analysis and simulated electrical instabilities in a non-ischemic dilated cardiomyopathy patient cohort. PLOS computational biology. 2019 Oct;15(10):e1007421-.](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1007421)
+
+
+[Balaban G, Halliday BP, Porter B, Bai W, Nygåard S, Owen R, Hatipoglu S, Ferreira ND, Izgi C, Tayal U, Corden B. Late-gadolinium enhancement interface area and electrophysiological simulations predict arrhythmic events in patients with nonischemic dilated cardiomyopathy. Clinical Electrophysiology. 2021 Feb 1;7(2):238-49.](https://www.jacc.org/doi/abs/10.1016/j.jacep.2020.08.036)
 
 # Lisence 
-CC-BY 4.0 or later version (https://creativecommons.org/licenses/)
+[CC-BY 4.0](https://creativecommons.org/licenses/) or later version.
